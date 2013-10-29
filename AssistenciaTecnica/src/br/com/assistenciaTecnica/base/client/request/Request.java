@@ -24,16 +24,16 @@ import br.com.assistenciaTecnica.base.stock.EletronicPiece;
 public class Request extends GeneralObject
 {
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "fk_id_requestType", insertable = true,
+	@JoinColumn(name = "fk_id_typeservice", insertable = true,
 				updatable = true)
 	@Fetch(FetchMode.JOIN)
-	private RequestType requestType;
+	private TypeService typeservice;
 	
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name = "fk_id_eltronicPart", insertable = true,
 				updatable = true)
 	@Fetch(FetchMode.JOIN)
-	private EletronicPiece eletronicPart;
+	private EletronicPiece eletronicPiece;
 	
 	@Temporal(TemporalType.DATE)
 	private Date dateRequest;
@@ -53,18 +53,17 @@ public class Request extends GeneralObject
 	@Column(columnDefinition = "FLOAT")
 	private Float valorDesconto;
 	
-	
-	public RequestType getRequestType() {
-		return requestType;
+	public TypeService getRequestType() {
+		return typeservice;
 	}
-	public void setRequestType(RequestType requestType) {
-		this.requestType = requestType;
+	public void setTypeService(TypeService typeservice) {
+		this.typeservice = typeservice;
 	}
-	public EletronicPiece getEletronicPart() {
-		return eletronicPart;
+	public EletronicPiece getEletronicPiece() {
+		return eletronicPiece;
 	}
-	public void setEletronicPart(EletronicPiece eletronicPart) {
-		this.eletronicPart = eletronicPart;
+	public void setEletronicPart(EletronicPiece eletronicPiece) {
+		this.eletronicPiece = eletronicPiece;
 	}
 	public Date getDateRequest() {
 		return dateRequest;

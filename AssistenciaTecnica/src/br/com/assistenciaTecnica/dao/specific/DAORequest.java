@@ -8,14 +8,14 @@ import javax.persistence.TypedQuery;
 import br.com.assistenciaTecnica.base.service.Service;
 import br.com.assistenciaTecnica.dao.generic.DAOGeneric;
 
-public class DAOService extends DAOGeneric<Service> implements IDAOService
+public class DAORequest extends DAOGeneric<Request> implements IDAORequest
 {
 	@Override
-	public List<Service> consultServicesByCode(Integer id)
+	public List<Request> consultRequestByCode(Integer id)
 	{
 		try
 		{
-			TypedQuery<Service> query = entityManager.createQuery("SELECT FROM Service s where s.id = :P",Service.class);
+			TypedQuery<Request> query = entityManager.createQuery("SELECT FROM Request r where r.id =: P", Request.class);
 			query.setParameter("P", id);
 			
 			return query.getResultList();
@@ -27,13 +27,14 @@ public class DAOService extends DAOGeneric<Service> implements IDAOService
 		return null;
 	}
 	
-	@Override
-	public List<Service> browseByChangeDate(Calendar date)
+	public List<Request> consultRequestByPeriod(Date dataInicial, Date dataFinal)
 	{
 		try
 		{
-			TypedQuery<Service> query = entityManager.createQuery("SELECT FROM Service s WHERE s.lastUpdade =: lastUpdade", Service.class);
-			query.setParameter("lastUpdate", date);
+			TypedQuery<Request> query = entityManager.createQuery("SELECT FROM Request r where r.deadLine between :D1 and :D2", Request.class);
+			query.setParameter("D1", dataInicial);
+			query.setParameter("D2", dataFinal);
+			
 			return query.getResultList();
 		}
 		catch(Exception e)
@@ -41,5 +42,6 @@ public class DAOService extends DAOGeneric<Service> implements IDAOService
 			e.printStackTrace();
 		}
 		return null;
-	} 
+	}
+	
 }
