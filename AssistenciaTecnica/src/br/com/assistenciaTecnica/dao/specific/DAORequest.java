@@ -1,11 +1,9 @@
 package br.com.assistenciaTecnica.dao.specific;
 
-import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
-
 import javax.persistence.TypedQuery;
-
-import br.com.assistenciaTecnica.base.service.Service;
+import br.com.assistenciaTecnica.base.client.request.Request;
 import br.com.assistenciaTecnica.dao.generic.DAOGeneric;
 
 public class DAORequest extends DAOGeneric<Request> implements IDAORequest

@@ -6,7 +6,7 @@ import javax.persistence.Table;
 import br.com.assistenciaTecnica.base.object.BasicEntity;
 
 @Entity @Table(name = "Type_Services")
-public class TypeService extends BasicEntity{
+public class ServiceType extends BasicEntity{
 	@Column(name = "Nome",length = 40)
 	private String name;
 	

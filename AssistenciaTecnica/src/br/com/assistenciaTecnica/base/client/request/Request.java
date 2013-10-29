@@ -8,7 +8,6 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -18,16 +17,17 @@ import org.hibernate.annotations.FetchMode;
 
 import br.com.assistenciaTecnica.base.client.Client;
 import br.com.assistenciaTecnica.base.object.GeneralObject;
+import br.com.assistenciaTecnica.base.service.ServiceType;
 import br.com.assistenciaTecnica.base.stock.EletronicPiece;
 
 @Entity @Table(name = "tb_request")
 public class Request extends GeneralObject
 {
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "fk_id_typeservice", insertable = true,
+	@JoinColumn(name = "fk_id_serviceType", insertable = true,
 				updatable = true)
 	@Fetch(FetchMode.JOIN)
-	private TypeService typeservice;
+	private ServiceType serviceType;
 	
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name = "fk_id_eltronicPart", insertable = true,
@@ -53,11 +53,11 @@ public class Request extends GeneralObject
 	@Column(columnDefinition = "FLOAT")
 	private Float valorDesconto;
 	
-	public TypeService getRequestType() {
-		return typeservice;
+	public ServiceType getRequestType() {
+		return serviceType;
 	}
-	public void setTypeService(TypeService typeservice) {
-		this.typeservice = typeservice;
+	public void setserviceType(ServiceType serviceType) {
+		this.serviceType = serviceType;
 	}
 	public EletronicPiece getEletronicPiece() {
 		return eletronicPiece;
