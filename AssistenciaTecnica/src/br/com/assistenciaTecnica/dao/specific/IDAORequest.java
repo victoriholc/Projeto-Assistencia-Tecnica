@@ -10,3 +10,4 @@ public interface IDAORequest extends IDAOGeneric<Request>
 	public List<Request> consultRequestByPeriod(Date dataInicial, Date dataFinal);
 	public List<Request> consultRequestByCode(Integer id);
 }
+ 
