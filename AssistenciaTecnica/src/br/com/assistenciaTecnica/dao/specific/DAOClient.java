@@ -1,6 +1,5 @@
 package br.com.assistenciaTecnica.dao.specific;
 
-
 import java.util.List;
 import javax.persistence.TypedQuery;
 import br.com.assistenciaTecnica.base.client.Client;

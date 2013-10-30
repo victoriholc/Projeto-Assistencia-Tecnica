@@ -26,12 +26,6 @@ public class Client extends Person
 	@Column(nullable = true)
 	private String document;
 	
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "fk_id_user", insertable = true,
-		updatable = true)
-	@Fetch(FetchMode.JOIN)
-	private User user;
-	
 	public ClientType getPersonType() {
 		return personType;
 	}
@@ -44,12 +38,4 @@ public class Client extends Person
 	public void setDocument(String document) {
 		this.document = document;
 	}
-	public User getUser() {
-		return user;
-	}
-	public void setUser(User user) {
-		this.user = user;
-	}
-	
-	
 }
