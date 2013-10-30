@@ -8,6 +8,6 @@ import br.com.assistenciaTecnica.dao.generic.IDAOGeneric;
 
 public interface IDAOService extends IDAOGeneric<Service>
 {
-	public List<Service> consultServicesByCode(Integer codigo);
+	public List<Service> consultServicesByCode(Integer id);
 	public List<Service> browseByChangeDate(Calendar date);
 }

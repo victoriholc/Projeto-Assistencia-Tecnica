@@ -15,12 +15,12 @@ import br.com.assistenciaTecnica.dao.generic.TypedQuery;
 public class DAOFunctionary extends DAOPerson implements IDAOFunctionary 
 {
 	@Override
-	public List<Functionary> searchByRole(String roleName) {
+	public List<Functionary> searchByRole(Role role) {
 		try
 		{
-			String jpql = "SELECT f FROM Funcionario f WHERE p.role.name LIKE :roleName";
+			String jpql = "SELECT f FROM Funcionario f WHERE f.role = :role";
 			TypedQuery<Funcionario> query = entityManager.createQuery(jpql, Funcionario.class);
-			query.setParameter("roleName", roleName);
+			query.setParameter("role", role);
 			
 			return query.getResultList();
 		}
@@ -34,37 +34,109 @@ public class DAOFunctionary extends DAOPerson implements IDAOFunctionary
 
 	@Override
 	public List<Functionary> searchByDepartment(Department department) {
-		// TODO Auto-generated method stub
+		try
+		{
+			String jpql = "SELECT f FROM Funcionario f WHERE f.department = :department";
+			TypedQuery<Funcionario> query = entityManager.createQuery(jpql, Funcionario.class);
+			query.setParameter("department", department);
+			
+			return query.getResultList();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
 		return null;
 	}
 
 	@Override
 	public Functionary searchByRegistrationCode(String registrationCode) {
-		// TODO Auto-generated method stub
+		try
+		{
+			String jpql = "SELECT f FROM Funcionario f WHERE f.registrationCode = :registrationCode";
+			TypedQuery<Funcionario> query = entityManager.createQuery(jpql, Funcionario.class);
+			query.setParameter("registrationCode", registrationCode);
+			
+			return query.getResultList();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
 		return null;
 	}
 
 	@Override
 	public List<Functionary> searchByDateAdimission(Date dateAdimission) {
-		// TODO Auto-generated method stub
+		try
+		{
+			String jpql = "SELECT f FROM Funcionario f WHERE f.dateAdimission = :dateAdimission";
+			TypedQuery<Funcionario> query = entityManager.createQuery(jpql, Funcionario.class);
+			query.setParameter("dateAdimission", dateAdimission);
+			
+			return query.getResultList();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
 		return null;
 	}
 
 	@Override
 	public List<Functionary> searchByDateResignation(Date dateResignation) {
-		// TODO Auto-generated method stub
+		try
+		{
+			String jpql = "SELECT f FROM Funcionario f WHERE f.dateResignation = :dateResignation";
+			TypedQuery<Funcionario> query = entityManager.createQuery(jpql, Funcionario.class);
+			query.setParameter("dateResignation", dateResignation);
+			
+			return query.getResultList();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
 		return null;
 	}
 
 	@Override
 	public Functionary searchByUser(User user) {
-		// TODO Auto-generated method stub
+		try
+		{
+			String jpql = "SELECT f FROM Funcionario f WHERE f.user = :user";
+			TypedQuery<Funcionario> query = entityManager.createQuery(jpql, Funcionario.class);
+			query.setParameter("user", user);
+			
+			return query.getResultList();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
 		return null;
 	}
 
 	@Override
 	public List<Functionary> searchByScholarity(Scholarity scholarity) {
-		// TODO Auto-generated method stub
+		try
+		{
+			String jpql = "SELECT f FROM Funcionario f WHERE f.scholarity = :scholarity";
+			TypedQuery<Funcionario> query = entityManager.createQuery(jpql, Funcionario.class);
+			query.setParameter("scholarity", scholarity);
+			
+			return query.getResultList();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
 		return null;
 	}
 
