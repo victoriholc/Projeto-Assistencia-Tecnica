@@ -12,7 +12,7 @@ public class DAOEletronicPiece extends DAOGeneric<EletronicPiece> implements IDA
 	@Override
 	public List<EletronicPiece> queryPieceByCode(Integer code)
 	{
-		TypedQuery<EletronicPiece> query = entityManager.createQuery("FROM EletricPiece e WHERE e.code =:name ", EletronicPiece.class);
+		TypedQuery<EletronicPiece> query = entityManager.createQuery("FROM EletricPiece e WHERE e.id =:name ", EletronicPiece.class);
 		query.setParameter("name", code);
 		return query.getResultList();
 	}

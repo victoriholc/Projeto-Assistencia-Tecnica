@@ -17,7 +17,7 @@ public class Service extends BasicEntity
 	private String name;
 	@JoinColumn(name = "Fk_Service_TypeService")
 	@ManyToOne(fetch = FetchType.EAGER)
-	private TypeService typeService;
+	private ServiceType typeService;
 	
 	public String getName() {
 		return name;
@@ -25,10 +25,10 @@ public class Service extends BasicEntity
 	public void setName(String name) {
 		this.name = name;
 	}
-	public TypeService getTypeService() {
+	public ServiceType getTypeService() {
 		return typeService;
 	}
-	public void setTypeService(TypeService typeService) {
+	public void setTypeService(ServiceType typeService) {
 		this.typeService = typeService;
 	}
 	

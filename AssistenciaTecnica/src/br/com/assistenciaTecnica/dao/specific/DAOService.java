@@ -11,12 +11,12 @@ import br.com.assistenciaTecnica.dao.generic.DAOGeneric;
 public class DAOService extends DAOGeneric<Service> implements IDAOService
 {
 	@Override
-	public List<Service> consultServicesByCode(Integer codigo)
+	public List<Service> consultServicesByCode(Integer id)
 	{
 		try
 		{
-			TypedQuery<Service> query = entityManager.createQuery("SELECT FROM Service s where s.codigo =: P",Service.class);
-			query.setParameter("P", codigo);
+			TypedQuery<Service> query = entityManager.createQuery("SELECT FROM Service s where s.id = :P",Service.class);
+			query.setParameter("P", id);
 			
 			return query.getResultList();
 		}
