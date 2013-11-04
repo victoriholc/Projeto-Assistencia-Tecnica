@@ -44,33 +44,45 @@ public abstract class Person extends GeneralObject
 
 	protected Address addressPerson;//Classe embeddable
 
+	public String getName() {
+		return name;
+	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public Calendar getBirthdayDate() {
 		return birthdayDate;
 	}
+
 	public void setBirthdayDate(Calendar birthdayDate) {
 		this.birthdayDate = birthdayDate;
 	}
+
 	public List<Telephone> getTelephones() {
 		return telephones;
 	}
+
 	public void setTelephones(List<Telephone> telephones) {
 		this.telephones = telephones;
 	}
+
 	public Address getAddressPerson() {
 		return addressPerson;
 	}
+
 	public void setAddressPerson(Address addressPerson) {
 		this.addressPerson = addressPerson;
-	} 
-	
+	}
+
 	
 }

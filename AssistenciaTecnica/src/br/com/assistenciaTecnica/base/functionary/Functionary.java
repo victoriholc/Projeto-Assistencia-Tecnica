@@ -2,6 +2,7 @@ package br.com.assistenciaTecnica.base.functionary;
 
 import java.util.Date;
 
+import javax.faces.bean.ManagedBean;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,6 +20,7 @@ import org.hibernate.annotations.FetchMode;
 import br.com.assistenciaTecnica.base.person.Person;
 import br.com.assistenciaTecnica.base.user.User;
 
+@ManagedBean
 @Entity @Table(name = "tb_functionary")
 @PrimaryKeyJoinColumn(name="id")
 public class Functionary extends Person 

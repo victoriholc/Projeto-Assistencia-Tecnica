@@ -7,25 +7,25 @@ import javax.persistence.Embeddable;
 public class Telephone
 {
 	@Column(nullable = true)
-	private Byte countryCode;
+	private Short countryCode;
 	@Column(nullable = false)
-	private Byte cityCode;
-	@Column(nullable = false)
+	private Short cityCode;
+	@Column(nullable = false, length = 16)
 	private String telephoneNumber;
 	
-	public Byte getCountryCode()
+	public Short getCountryCode()
 	{
 		return countryCode;
 	}
-	public void setCountryCode(Byte countryCode)
+	public void setCountryCode(Short countryCode)
 	{
 		this.countryCode = countryCode;
 	}
-	public Byte getCityCode()
+	public Short getCityCode()
 	{
 		return cityCode;
 	}
-	public void setCityCode(Byte cityCode)
+	public void setCityCode(Short cityCode)
 	{
 		this.cityCode = cityCode;
 	}
