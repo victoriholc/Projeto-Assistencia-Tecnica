@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Cadastrar Funcionário</title>
+	</h:head>
+	<h:body>
+		<div style="background-color:navy;width:100%;color:white"></div>
+		<h:form>
+			<p:panel header="Manter">  
+		        <h:panelGrid columns="2" cellpadding="19">  
+		        	<h:outputText value="Nome: " />
+		        	<p:inputText value="#functionary.name"/>
+		        	
+		        	<h:outputText value="Endereço: " />
+		        	<p:inputText value="#functionary.addressPerson.street"/>
+		        	
+		        	<h:outputText value="Numero: " />
+		        	<p:inputText value="#functionary.addressPerson.streetNumber"/>
+		        	
+		        	<h:outputText value="Complemento: " />
+		        	<p:inputText value="#functionary.addressPerson.streetType"/>
+		        	
+		        	<h:outputText value="Bairro: " />
+		        	<p:inputText value="#functionary.addressPerson.distric"/>
+		        	
+		        	<h:outputText value="Região: " />
+		        	<p:inputText value="#functionary.addressPerson.region"/>
+		        	
+		            <h:outputText value="Data de Nascimento: " />  
+		            <p:inputMask value="#{functionary.birthdayDate}" mask="99/99/9999"/>  
+		              
+		            <h:outputText value="Telefone: " />  
+		            <p:inputMask value="#{maskController.phone}" mask="+99 (999) 9999-9999"/>
+		            
+		            <h:outputText value="Telefone Celular: " />  
+		            <p:inputMask value="#{maskController.phone}" mask="+99 (999) 9999-9999"/>
+		            
+		            <h:outputText value="Região: " />
+		        	<p:inputText value="#functionary.addressPerson.region"/>
+		                
+		          	<h:outputText value="Data de Admissão: " />  
+		            <p:inputMask value="#{functionary.dateAdmission}" mask="99/99/9999"/>
+		            
+		            <h:outputText value="Data de Demissão: " />  
+		            <p:inputMask value="#{functionary.dateResignation}" mask="99/99/9999"/>
+		          	
+		          	<h:outputText value="Departamento: " />
+		        	<p:inputText value="#functionary.department"/>
+		        	
+		        	<h:outputText value="Função: " />
+		        	<p:inputText value="#functionary.role"/>
+		          	
+		          	<h:outputText value="Escolaridade: " />
+		        	<p:inputText value="#functionary.scholarity"/>
+		        	
+		        	<h:outputText value="Usuario: " />
+		        	<p:inputText value="#functionary.user.userName"/>
+		        	
+		        	<h:outputText value="Senha: " />
+		        	<p:inputText value="#functionary.user.password"/>
+		          	
+		            <p:commandButton value="Reset" type="reset" />  
+		            <p:commandButton value="Submit" update="display" oncomplete="PF('dlg').show()"/>  
+		  
+		        </h:panelGrid>  
+		    </p:panel>  
+		</h:form>
+	</h:body>
+</html>
