@@ -1,4 +1,4 @@
-package br.com.assistenciaTecnica.businessRoles;
+package br.com.assistenciaTecnica.business;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -31,9 +31,9 @@ public class ClientController{
 		if (client == null)
 			throw new NullPointerException("Cliente nulo");
 		if (client.getName() == null || client.getName().isEmpty() || client.getName().length() > 50)
-			throw new InvalidPersonFieldException("Nome inválido!");
+			throw new InvalidPersonFieldException("Nome invï¿½lido!");
 		if (client.getEmail() == null || client.getEmail().isEmpty() || client.getEmail().length() > 25)
-			throw new InvalidPersonFieldException("Email inválido!");
+			throw new InvalidPersonFieldException("Email invï¿½lido!");
 		for (int i = 0; i < client.getTelephones().size(); ++i)
 		{
 			if (client.getTelephones().get(i).getCountryCode() == null || 

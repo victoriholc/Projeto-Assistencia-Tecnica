@@ -1,4 +1,4 @@
-package br.com.assistenciaTecnica.businessRoles;
+package br.com.assistenciaTecnica.business;
 
 import java.util.Date;
 import java.util.List;
@@ -155,7 +155,7 @@ public class FunctionaryContoller {
 				throw new InvalidPersonAdressException();
 		}
 	}
-	private final void validateFunctionaryFields(Functionary functionary)
+	private final void validateFunctionaryFields(Functionary functionary) throws InvalidFunctionaryFieldException
 	{
 		
 	}

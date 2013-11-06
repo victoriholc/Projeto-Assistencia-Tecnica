@@ -1,4 +1,4 @@
-package br.com.assistenciaTecnica.businessRoles;
+package br.com.assistenciaTecnica.business;
 
 import br.com.assistenciaTecnica.base.service.Service;
 import br.com.assistenciaTecnica.dao.specific.ServiceDAO;

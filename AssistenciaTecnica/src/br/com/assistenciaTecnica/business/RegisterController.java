@@ -1,4 +1,4 @@
-package br.com.assistenciaTecnica.businessRoles;
+package br.com.assistenciaTecnica.business;
 
 import java.util.List;
 
