@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.TypedQuery;
 
+import br.com.assistenciaTecnica.base.stock.EletronicPiece;
 import br.com.assistenciaTecnica.base.stock.Register;
 import br.com.assistenciaTecnica.dao.generic.GenericDAO;
 
@@ -31,10 +32,10 @@ public class RegisterDAO extends GenericDAO<Register> implements IRegisterDAO
 	{
 		try
 		{
-			TypedQuery<Register> query = entityManager.createQuery("SELECT FROM Register r WHERW r.lot =: lot", Register.class);
+			TypedQuery<Register> query = entityManager.createQuery("SELECT FROM Register r WHERE r.lot = :lot", Register.class);
 			query.setParameter("lot", lot);
 
-			return query.getResultList();
+			return query.getResultList().count();
 		}
 		catch(Exception e)
 		{
@@ -42,11 +43,12 @@ public class RegisterDAO extends GenericDAO<Register> implements IRegisterDAO
 		}
 		return null;
 	}
-	public List<Register> consultQualityOfPiece(Integer piece)
+	public Integer consultQuantityOfPiece(EletronicPiece piece)
 	{
 		try{
-			TypedQuery<Register> query = entityManager.createQuery("SELECT r.part.name, COUNT(*) FROM Register r GROUP BY r.part.name", Register.class);
-			return query.getResultList();
+			TypedQuery<Register> query = entityManager.createQuery("SELECT  FROM EletronicPiece e WHERE e.name = :e.name", Register.class);
+			query.setParameter("piece", piece);
+			return query.getResultList().count();
 		}catch(Exception e){
 			e.printStackTrace();
 		}

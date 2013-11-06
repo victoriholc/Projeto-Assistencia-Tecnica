@@ -10,4 +10,5 @@ public interface IRegisterDAO extends IGenericDAO<Register>
 {
 	public List<Register> browseByChangeDate(Calendar lasUpdate);
 	public List<Register> batchQuery(String lot);
+	public List<Register> consultQuantityOfPiece(Integer piece);
 }
