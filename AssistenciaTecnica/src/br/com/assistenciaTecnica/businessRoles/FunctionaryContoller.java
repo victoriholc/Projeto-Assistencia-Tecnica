@@ -10,7 +10,6 @@ import br.com.assistenciaTecnica.base.functionary.Scholarity;
 import br.com.assistenciaTecnica.base.user.User;
 import br.com.assistenciaTecnica.business.exceptions.person.InvalidPersonFieldException;
 import br.com.assistenciaTecnica.business.exceptions.person.address.InvalidPersonAdressException;
-import br.com.assistenciaTecnica.business.exceptions.user.InvalidUserFieldException;
 import br.com.assistenciaTecnica.dao.specific.FunctionaryDAO;
 import br.com.assistenciaTecnica.dao.specific.IFunctionaryDAO;
 
@@ -21,33 +20,11 @@ public class FunctionaryContoller {
 		this.daoFunctionary = new FunctionaryDAO();
 	}
 	
-	public void insert(Functionary functionary) throws NullPointerException,
-															InvalidPersonFieldException,
-															InvalidPersonAdressException,
-															InvalidUserFieldException
+	public void insert(Functionary functionary) 
 	{
-		if (functionary == null)
-			throw new NullPointerException("Funcionário nulo");
-		if (functionary.getName() == null || functionary.getName().isEmpty() || functionary.getName().length() > 50)
-			throw new InvalidPersonFieldException("Nome inválido!");
-		if (functionary.getEmail() == null || functionary.getEmail().isEmpty() || functionary.getEmail().length() > 25)
-			throw new InvalidPersonFieldException("Email inválido!");
-		for (int i = 0; i < functionary.getTelephones().size(); ++i)
-		{
-			if (functionary.getTelephones().get(i).getCountryCode() == null || 
-				functionary.getTelephones().get(i).getCountryCode() == 0)
-				throw new InvalidPersonAdressException("Códido de país inválido!");
-			if (functionary.getTelephones().get(i).getCityCode() == null || 
-				functionary.getTelephones().get(i).getCityCode() == 0)
-				throw new InvalidPersonAdressException("Códido de cidade inválido!");
-			if (functionary.getTelephones().get(i).getTelephoneNumber() == null || 
-				functionary.getTelephones().get(i).getTelephoneNumber().isEmpty() ||
-				functionary.getTelephones().get(i).getTelephoneNumber().length() > 16)
-				throw new InvalidPersonAdressException("Códido de cidade inválido!");
-		}
-			
-		
 		try{
+			this.validatePersonFields(functionary);
+			this.validateAdressFields(functionary);
 			this.daoFunctionary.insert(functionary);
 		}catch(Exception e){
 			e.printStackTrace();
@@ -56,6 +33,8 @@ public class FunctionaryContoller {
 	
 	public void update(Functionary functionary){
 		try{
+			this.validatePersonFields(functionary);
+			this.validateAdressFields(functionary);
 			this.daoFunctionary.update(functionary);
 		}catch(Exception e){
 			e.printStackTrace();
@@ -64,6 +43,8 @@ public class FunctionaryContoller {
 	
 	public void remove(Functionary functionary){
 		try{
+			this.validatePersonFields(functionary);
+			this.validateAdressFields(functionary);
 			this.daoFunctionary.remove(functionary);
 		}catch(Exception e){
 			e.printStackTrace();
@@ -146,5 +127,36 @@ public class FunctionaryContoller {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	private final void validatePersonFields(Functionary functionary) throws InvalidPersonFieldException
+	{
+		if (functionary == null)
+			throw new NullPointerException("Funcionário nulo");
+		if (functionary.getName() == null || functionary.getName().isEmpty() || functionary.getName().length() > 50)
+			throw new InvalidPersonFieldException();
+		if (functionary.getEmail() == null || functionary.getEmail().isEmpty() || functionary.getEmail().length() > 25)
+			throw new InvalidPersonFieldException();
+		
+	}
+	private final void validateAdressFields(Functionary functionary) throws InvalidPersonAdressException
+	{
+		for (int i = 0; i < functionary.getTelephones().size(); ++i)
+		{
+			if (functionary.getTelephones().get(i).getCountryCode() == null || 
+				functionary.getTelephones().get(i).getCountryCode() == 0)
+				throw new InvalidPersonAdressException();
+			if (functionary.getTelephones().get(i).getCityCode() == null || 
+				functionary.getTelephones().get(i).getCityCode() == 0)
+				throw new InvalidPersonAdressException();
+			if (functionary.getTelephones().get(i).getTelephoneNumber() == null || 
+				functionary.getTelephones().get(i).getTelephoneNumber().isEmpty() ||
+				functionary.getTelephones().get(i).getTelephoneNumber().length() > 16)
+				throw new InvalidPersonAdressException();
+		}
+	}
+	private final void validateFunctionaryFields(Functionary functionary)
+	{
+		
 	}
 }
