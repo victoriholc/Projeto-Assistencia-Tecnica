@@ -3,15 +3,15 @@ package br.com.assistenciaTecnica.business;
 import java.util.Date;
 import java.util.List;
 
-import br.com.assistenciaTecnica.base.functionary.Department;
-import br.com.assistenciaTecnica.base.functionary.Functionary;
-import br.com.assistenciaTecnica.base.functionary.Role;
-import br.com.assistenciaTecnica.base.functionary.Scholarity;
 import br.com.assistenciaTecnica.base.user.User;
 import br.com.assistenciaTecnica.business.exceptions.person.InvalidPersonFieldException;
 import br.com.assistenciaTecnica.business.exceptions.person.address.InvalidPersonAdressException;
-import br.com.assistenciaTecnica.dao.specific.FunctionaryDAO;
-import br.com.assistenciaTecnica.dao.specific.IFunctionaryDAO;
+import br.com.assistenciaTecnica.organization.dao.functionary.FunctionaryDAO;
+import br.com.assistenciaTecnica.organization.dao.functionary.IFunctionaryDAO;
+import br.com.assistenciaTecnica.organization.model.functionary.Department;
+import br.com.assistenciaTecnica.organization.model.functionary.Functionary;
+import br.com.assistenciaTecnica.organization.model.functionary.Function;
+import br.com.assistenciaTecnica.organization.model.functionary.Scholarity;
 
 public class FunctionaryContoller {
 	private IFunctionaryDAO daoFunctionary;
@@ -69,7 +69,7 @@ public class FunctionaryContoller {
 		return null;
 	}
 	
-	public List<Functionary> searchByRole(Role role){
+	public List<Functionary> searchByRole(Function role){
 		try{
 			this.daoFunctionary.searchByRole(role);
 		}catch(Exception e){

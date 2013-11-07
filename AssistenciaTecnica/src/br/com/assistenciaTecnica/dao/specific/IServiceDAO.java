@@ -3,8 +3,9 @@ package br.com.assistenciaTecnica.dao.specific;
 import java.util.Calendar;
 import java.util.List;
 
+import dao.IGenericDAO;
+
 import br.com.assistenciaTecnica.base.service.Service;
-import br.com.assistenciaTecnica.dao.generic.IGenericDAO;
 
 public interface IServiceDAO extends IGenericDAO<Service>
 {

@@ -1,4 +1,4 @@
-package br.com.assistenciaTecnica.base.functionary;
+package br.com.assistenciaTecnica.organization.model.functionary;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;

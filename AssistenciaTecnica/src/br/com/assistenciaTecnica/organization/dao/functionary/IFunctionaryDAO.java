@@ -1,18 +1,17 @@
-package br.com.assistenciaTecnica.dao.specific;
+package br.com.assistenciaTecnica.organization.dao.functionary;
 
 import java.util.Date;
 import java.util.List;
-
-import br.com.assistenciaTecnica.base.functionary.Department;
-import br.com.assistenciaTecnica.base.functionary.Functionary;
-import br.com.assistenciaTecnica.base.functionary.Role;
-import br.com.assistenciaTecnica.base.functionary.Scholarity;
 import br.com.assistenciaTecnica.base.user.User;
-import br.com.assistenciaTecnica.dao.generic.IPersonDAO;
+import br.com.assistenciaTecnica.organization.dao.IPersonDAO;
+import br.com.assistenciaTecnica.organization.model.functionary.Department;
+import br.com.assistenciaTecnica.organization.model.functionary.Function;
+import br.com.assistenciaTecnica.organization.model.functionary.Functionary;
+import br.com.assistenciaTecnica.organization.model.functionary.Scholarity;
 
 public interface IFunctionaryDAO extends IPersonDAO
 {
-	public List<Functionary> searchByRole(Role role);
+	public List<Functionary> searchByFunction(Function function);
 	public List<Functionary> searchByDepartment(Department department);
 	public Functionary searchByRegistrationCode(String registrationCode);
 	public List<Functionary> searchByDateAdimission(Date dateAdimission);

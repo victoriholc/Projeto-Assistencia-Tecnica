@@ -3,8 +3,9 @@ package br.com.assistenciaTecnica.dao.specific;
 import java.util.Calendar;
 import java.util.List;
 import javax.persistence.TypedQuery;
+
+import dao.GenericDAO;
 import br.com.assistenciaTecnica.base.service.Service;
-import br.com.assistenciaTecnica.dao.generic.GenericDAO;
 
 public class ServiceDAO extends GenericDAO<Service> implements IServiceDAO
 {

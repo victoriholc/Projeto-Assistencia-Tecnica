@@ -1,6 +1,6 @@
 //Funcao
 
-package br.com.assistenciaTecnica.base.functionary;
+package br.com.assistenciaTecnica.organization.model.functionary;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,8 +8,8 @@ import javax.persistence.Table;
 
 import br.com.assistenciaTecnica.base.object.BasicEntity;
 
-@Entity @Table(name = "tb_role")
-public class Role extends BasicEntity
+@Entity @Table(name = "tb_function")
+public class Function extends BasicEntity
 {
 	@Column(columnDefinition = "VARCHAR(30)")
 	private String name;

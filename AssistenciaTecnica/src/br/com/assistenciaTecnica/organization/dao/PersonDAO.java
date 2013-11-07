@@ -1,4 +1,4 @@
-package br.com.assistenciaTecnica.dao.generic;
+package br.com.assistenciaTecnica.organization.dao;
 
 import java.util.Calendar;
 import java.util.List;

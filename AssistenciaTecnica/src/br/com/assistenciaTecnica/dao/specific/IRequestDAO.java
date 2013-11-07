@@ -2,8 +2,9 @@ package br.com.assistenciaTecnica.dao.specific;
 
 import java.util.Date;
 import java.util.List;
+
+import dao.IGenericDAO;
 import br.com.assistenciaTecnica.base.client.request.Request;
-import br.com.assistenciaTecnica.dao.generic.IGenericDAO;
 
 public interface IRequestDAO extends IGenericDAO<Request>
 {

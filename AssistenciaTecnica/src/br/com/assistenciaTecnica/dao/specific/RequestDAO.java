@@ -2,7 +2,9 @@ package br.com.assistenciaTecnica.dao.specific;
 
 import java.util.Date;
 import java.util.List;
+
 import javax.persistence.TypedQuery;
+
 import br.com.assistenciaTecnica.base.client.request.Request;
 import br.com.assistenciaTecnica.dao.generic.GenericDAO;
 

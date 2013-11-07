@@ -1,4 +1,4 @@
-package br.com.assistenciaTecnica.base.functionary;
+package br.com.assistenciaTecnica.organization.model.functionary;
 
 import java.util.Date;
 
@@ -29,7 +29,7 @@ public class Functionary extends Person
 	@JoinColumn(name = "fk_id_role", insertable = true,
 			updatable = true)
 	@Fetch(FetchMode.JOIN)
-	protected Role role; //Funcao
+	protected Function role; //Funcao
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "fk_id_department", insertable = true,
@@ -58,11 +58,11 @@ public class Functionary extends Person
 	@Fetch(FetchMode.JOIN)
 	protected Scholarity scholarity; //escolaridade
 
-	public Role getRole() {
+	public Function getRole() {
 		return role;
 	}
 
-	public void setRole(Role role) {
+	public void setRole(Function role) {
 		this.role = role;
 	}
 

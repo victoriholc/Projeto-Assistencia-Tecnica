@@ -3,18 +3,17 @@ package br.com.assistenciaTecnica.business;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-
 import br.com.assistenciaTecnica.base.client.*;
-import br.com.assistenciaTecnica.base.functionary.Department;
-import br.com.assistenciaTecnica.base.functionary.Functionary;
-import br.com.assistenciaTecnica.base.functionary.Role;
-import br.com.assistenciaTecnica.base.functionary.Scholarity;
 import br.com.assistenciaTecnica.base.user.User;
 import br.com.assistenciaTecnica.business.exceptions.person.InvalidPersonFieldException;
 import br.com.assistenciaTecnica.business.exceptions.person.address.InvalidPersonAdressException;
 import br.com.assistenciaTecnica.business.exceptions.user.InvalidUserFieldException;
 import br.com.assistenciaTecnica.dao.specific.*;
 import br.com.assistenciaTecnica.dao.generic.*;
+import br.com.assistenciaTecnica.organization.model.functionary.Department;
+import br.com.assistenciaTecnica.organization.model.functionary.Functionary;
+import br.com.assistenciaTecnica.organization.model.functionary.Function;
+import br.com.assistenciaTecnica.organization.model.functionary.Scholarity;
 
 public class ClientController{
 	private IClientDAO daoClient;

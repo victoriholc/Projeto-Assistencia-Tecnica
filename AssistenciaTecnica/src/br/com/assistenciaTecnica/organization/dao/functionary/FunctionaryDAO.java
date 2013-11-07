@@ -1,25 +1,25 @@
-package br.com.assistenciaTecnica.dao.specific;
+package br.com.assistenciaTecnica.organization.dao.functionary;
 
 import java.util.Date;
 import java.util.List;
 import javax.persistence.TypedQuery;
-import br.com.assistenciaTecnica.base.functionary.Department;
-import br.com.assistenciaTecnica.base.functionary.Functionary;
-import br.com.assistenciaTecnica.base.functionary.Role;
-import br.com.assistenciaTecnica.base.functionary.Scholarity;
 import br.com.assistenciaTecnica.base.user.User;
-import br.com.assistenciaTecnica.dao.generic.PersonDAO;
+import br.com.assistenciaTecnica.organization.dao.PersonDAO;
+import br.com.assistenciaTecnica.organization.model.functionary.Department;
+import br.com.assistenciaTecnica.organization.model.functionary.Function;
+import br.com.assistenciaTecnica.organization.model.functionary.Functionary;
+import br.com.assistenciaTecnica.organization.model.functionary.Scholarity;
 
 
 public class FunctionaryDAO extends PersonDAO implements IFunctionaryDAO 
 {
 	@Override
-	public List<Functionary> searchByRole(Role role) {
+	public List<Functionary> searchByFunction(Function function){
 		try
 		{
-			String jpql = "SELECT f FROM Functionary f WHERE f.role = :role";
+			String jpql = "SELECT f FROM Functionary f WHERE f.function = :function";
 			TypedQuery<Functionary> query = entityManager.createQuery(jpql, Functionary.class);
-			query.setParameter("role", role);
+			query.setParameter("function", function);
 			
 			return query.getResultList();
 		}
@@ -132,6 +132,12 @@ public class FunctionaryDAO extends PersonDAO implements IFunctionaryDAO
 			e.printStackTrace();
 		}
 		
+		return null;
+	}
+
+	@Override
+	public List<Functionary> searchByFunction(Function function) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
