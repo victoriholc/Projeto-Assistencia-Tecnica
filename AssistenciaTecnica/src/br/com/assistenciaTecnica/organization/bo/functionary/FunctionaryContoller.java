@@ -4,9 +4,9 @@ import java.util.Date;
 import java.util.List;
 
 import br.com.assistenciaTecnica.base.user.User;
-import br.com.assistenciaTecnica.organization.bo.InvalidFunctionaryFieldException;
 import br.com.assistenciaTecnica.organization.bo.exceptions.person.InvalidPersonFieldException;
 import br.com.assistenciaTecnica.organization.bo.exceptions.person.address.InvalidPersonAdressException;
+import br.com.assistenciaTecnica.organization.bo.functionary.exceptions.InvalidFunctionaryFieldException;
 import br.com.assistenciaTecnica.organization.dao.functionary.FunctionaryDAO;
 import br.com.assistenciaTecnica.organization.dao.functionary.IFunctionaryDAO;
 import br.com.assistenciaTecnica.organization.model.functionary.Department;

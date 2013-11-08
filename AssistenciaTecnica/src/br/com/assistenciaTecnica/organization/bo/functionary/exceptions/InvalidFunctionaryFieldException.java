@@ -1,4 +1,4 @@
-package br.com.assistenciaTecnica.organization.bo;
+package br.com.assistenciaTecnica.organization.bo.functionary.exceptions;
 
 public class InvalidFunctionaryFieldException extends Exception 
 {
