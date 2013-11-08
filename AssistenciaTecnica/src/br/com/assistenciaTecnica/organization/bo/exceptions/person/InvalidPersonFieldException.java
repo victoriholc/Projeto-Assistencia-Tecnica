@@ -1,4 +1,4 @@
-package br.com.assistenciaTecnica.business.exceptions.person;
+package br.com.assistenciaTecnica.organization.bo.exceptions.person;
 
 public class InvalidPersonFieldException extends Exception 
 {

@@ -1,4 +1,4 @@
-package br.com.assistenciaTecnica.business.exceptions.user;
+package br.com.assistenciaTecnica.organization.bo.exceptions.user;
 
 public class InvalidUserFieldException extends Exception 
 {

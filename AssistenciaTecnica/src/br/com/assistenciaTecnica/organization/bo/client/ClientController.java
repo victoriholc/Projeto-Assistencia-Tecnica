@@ -1,4 +1,4 @@
-package br.com.assistenciaTecnica.business;
+package br.com.assistenciaTecnica.organization.bo.client;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -6,11 +6,11 @@ import java.util.List;
 
 import br.com.assistenciaTecnica.base.client.*;
 import br.com.assistenciaTecnica.base.user.User;
-import br.com.assistenciaTecnica.business.exceptions.person.InvalidPersonFieldException;
-import br.com.assistenciaTecnica.business.exceptions.person.address.InvalidPersonAdressException;
-import br.com.assistenciaTecnica.business.exceptions.user.InvalidUserFieldException;
 import br.com.assistenciaTecnica.dao.specific.*;
 import br.com.assistenciaTecnica.dao.generic.*;
+import br.com.assistenciaTecnica.organization.bo.exceptions.person.InvalidPersonFieldException;
+import br.com.assistenciaTecnica.organization.bo.exceptions.person.address.InvalidPersonAdressException;
+import br.com.assistenciaTecnica.organization.bo.exceptions.user.InvalidUserFieldException;
 import br.com.assistenciaTecnica.organization.dao.client.ClientDAO;
 import br.com.assistenciaTecnica.organization.dao.client.IClientDAO;
 import br.com.assistenciaTecnica.organization.model.functionary.Department;

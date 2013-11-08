@@ -1,4 +1,4 @@
-package br.com.assistenciaTecnica.business;
+package br.com.assistenciaTecnica.organization.bo.eletronicPiece;
 
 import br.com.assistenciaTecnica.base.*;
 import br.com.assistenciaTecnica.base.service.Service;

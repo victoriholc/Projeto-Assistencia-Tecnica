@@ -1,4 +1,4 @@
-package br.com.assistenciaTecnica.business.exceptions.person.address;
+package br.com.assistenciaTecnica.organization.bo.exceptions.person.address;
 
 public class InvalidPersonAdressException extends Exception 
 {
