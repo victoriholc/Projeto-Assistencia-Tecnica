@@ -12,20 +12,15 @@ public class FunctionDAO extends GenericDAO<Function> implements IFunctionDAO {
 
 	@Override
 	public Function searchFunctionByName(Function function) {
-		TypedQuery<Function function> query = entityManager.createNamedQuery("Function f ", arg1)
-		return null;
+		TypedQuery<Function> query = entityManager.createNamedQuery("SELECT f FROM Function f WHERE f.name := name", Function.class);
+		query.setParameter("name", function.getName());
+		return query.getSingleResult();
 	}
 
-	@Override
+	@Override//Eu não sei se estar muito certo esse método, por favor, alguem verifique pra mim
 	public List<Function> functionListBySalary(Function function) {
-		// TODO Auto-generated method stub
-		return null;
+		TypedQuery<Function> query = entityManager.createNamedQuery("SELECT f FROM Function f WHERE f.salary := salary ", Function.class);
+		List<Function> salario = query.setFirstResult(10).setMaxResults(10).getResultList();
+		return salario;
 	}
-
-	@Override
-	public void alterFurctionByName(Function function) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

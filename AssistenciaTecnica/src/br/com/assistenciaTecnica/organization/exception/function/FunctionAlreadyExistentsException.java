@@ -1,12 +1,12 @@
 package br.com.assistenciaTecnica.organization.exception.function;
 
-public class RoleAlreadyExistentsException {
+public class FunctionAlreadyExistentsException extends Exception{
 	private static final String message = "Funcao ja Existe!";
 
 	
 	
 	
-	public RoleAlreadyExistentsException() {
+	public FunctionAlreadyExistentsException() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
