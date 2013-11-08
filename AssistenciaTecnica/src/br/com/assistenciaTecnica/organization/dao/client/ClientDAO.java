@@ -1,10 +1,12 @@
-package br.com.assistenciaTecnica.dao.specific;
+package br.com.assistenciaTecnica.organization.dao.client;
 
 import java.util.List;
+
 import javax.persistence.TypedQuery;
+
 import br.com.assistenciaTecnica.base.client.Client;
 import br.com.assistenciaTecnica.base.client.ClientType;
-import br.com.assistenciaTecnica.dao.generic.PersonDAO;
+import br.com.assistenciaTecnica.organization.dao.PersonDAO;
 
 public class ClientDAO extends PersonDAO implements IClientDAO
 {

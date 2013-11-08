@@ -3,9 +3,9 @@ package br.com.assistenciaTecnica.business;
 import br.com.assistenciaTecnica.base.*;
 import br.com.assistenciaTecnica.base.service.Service;
 import br.com.assistenciaTecnica.base.stock.EletronicPiece;
-import br.com.assistenciaTecnica.dao.specific.EletronicPieceDAO;
-import br.com.assistenciaTecnica.dao.specific.IEletronicPieceDAO;
-import br.com.assistenciaTecnica.dao.specific.ServiceDAO;
+import br.com.assistenciaTecnica.organization.dao.eletronicPiece.EletronicPieceDAO;
+import br.com.assistenciaTecnica.organization.dao.eletronicPiece.IEletronicPieceDAO;
+import br.com.assistenciaTecnica.organization.dao.service.ServiceDAO;
 
 
 public class EletronicPieceController{

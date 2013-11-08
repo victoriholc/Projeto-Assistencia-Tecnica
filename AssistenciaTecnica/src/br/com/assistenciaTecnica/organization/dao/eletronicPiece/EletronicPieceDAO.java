@@ -1,11 +1,10 @@
-package br.com.assistenciaTecnica.dao.specific;
+package br.com.assistenciaTecnica.organization.dao.eletronicPiece;
 
 import java.util.List;
 
 import javax.persistence.TypedQuery;
 
 import dao.GenericDAO;
-
 import br.com.assistenciaTecnica.base.stock.EletronicPiece;
 
 public class EletronicPieceDAO extends GenericDAO<EletronicPiece> implements IEletronicPieceDAO

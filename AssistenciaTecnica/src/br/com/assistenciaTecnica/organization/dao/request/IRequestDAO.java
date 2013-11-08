@@ -1,4 +1,4 @@
-package br.com.assistenciaTecnica.dao.specific;
+package br.com.assistenciaTecnica.organization.dao.request;
 
 import java.util.Date;
 import java.util.List;

@@ -1,8 +1,8 @@
 package br.com.assistenciaTecnica.business;
 
 import br.com.assistenciaTecnica.base.service.Service;
-import br.com.assistenciaTecnica.dao.specific.ServiceDAO;
-import br.com.assistenciaTecnica.dao.specific.IServiceDAO;
+import br.com.assistenciaTecnica.organization.dao.service.IServiceDAO;
+import br.com.assistenciaTecnica.organization.dao.service.ServiceDAO;
 
 public class ServiceController {
 	private IServiceDAO daoService;

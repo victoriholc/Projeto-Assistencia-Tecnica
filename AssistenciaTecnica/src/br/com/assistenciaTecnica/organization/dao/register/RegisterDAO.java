@@ -1,4 +1,4 @@
-package br.com.assistenciaTecnica.dao.specific;
+package br.com.assistenciaTecnica.organization.dao.register;
 
 import java.util.Calendar;
 import java.util.List;
@@ -7,7 +7,7 @@ import javax.persistence.TypedQuery;
 
 import br.com.assistenciaTecnica.base.stock.EletronicPiece;
 import br.com.assistenciaTecnica.base.stock.Register;
-import br.com.assistenciaTecnica.dao.generic.GenericDAO;
+import br.com.assistenciaTecnica.organization.dao.GenericDAO;
 
 public class RegisterDAO extends GenericDAO<Register> implements IRegisterDAO
 {

@@ -2,7 +2,6 @@ package br.com.assistenciaTecnica.organization.dao;
 
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;

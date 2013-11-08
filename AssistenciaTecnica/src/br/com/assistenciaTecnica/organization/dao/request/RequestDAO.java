@@ -1,4 +1,4 @@
-package br.com.assistenciaTecnica.dao.specific;
+package br.com.assistenciaTecnica.organization.dao.request;
 
 import java.util.Date;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import javax.persistence.TypedQuery;
 
 import br.com.assistenciaTecnica.base.client.request.Request;
-import br.com.assistenciaTecnica.dao.generic.GenericDAO;
+import br.com.assistenciaTecnica.organization.dao.GenericDAO;
 
 public class RequestDAO extends GenericDAO<Request> implements IRequestDAO
 {

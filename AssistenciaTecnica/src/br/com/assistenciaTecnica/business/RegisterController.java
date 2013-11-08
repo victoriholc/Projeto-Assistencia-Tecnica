@@ -5,10 +5,10 @@ import java.util.List;
 import br.com.assistenciaTecnica.base.service.Service;
 import br.com.assistenciaTecnica.base.stock.EletronicPiece;
 import br.com.assistenciaTecnica.base.stock.Register;
-import br.com.assistenciaTecnica.dao.specific.IRegisterDAO;
-import br.com.assistenciaTecnica.dao.specific.IServiceDAO;
-import br.com.assistenciaTecnica.dao.specific.RegisterDAO;
-import br.com.assistenciaTecnica.dao.specific.ServiceDAO;
+import br.com.assistenciaTecnica.organization.dao.register.IRegisterDAO;
+import br.com.assistenciaTecnica.organization.dao.register.RegisterDAO;
+import br.com.assistenciaTecnica.organization.dao.service.IServiceDAO;
+import br.com.assistenciaTecnica.organization.dao.service.ServiceDAO;
 
 public class RegisterController{
 	
