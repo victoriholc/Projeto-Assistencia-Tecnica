@@ -1,5 +1,6 @@
 package beans.organization.department;
 
+
 import java.util.ArrayList;
 import java.util.List;
 

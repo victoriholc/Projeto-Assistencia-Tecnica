@@ -15,13 +15,12 @@ public class FunctionBO{
 	}
 	
 	public void insertFunction(Function function) throws Exception{
-		try{
-		this.functionDAO.insert(function);
-		throw new FunctionAlreadyExistentsException();
-		
-		}catch(Exception e){
-			e.printStackTrace();
+		if(function == null){
+			this.functionDAO.insert(function);
+		}else{
+			throw new FunctionAlreadyExistentsException();
 		}
+		
 	}
 	
 	public void refrechFunction(Function function) throws Exception{
@@ -30,14 +29,19 @@ public class FunctionBO{
 			throw new FunctionAlreadyExistentsException();
 	}
 	
-	public void removeFunction(Function function) throws NoSearchResultsException{
-		this.functionDAO.remove(function);
+	public void removeFunction(Function function){
+		try{
+			this.functionDAO.remove(function);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 		
 	}
 	
-	public Function searchFunctionById(Function function) throws NoSearchResultsException{
+	public Function searchFunctionById(Function function) throws Exception{
 		try{
 		this.functionDAO.searchFunctionByName(function);
+		throw new NoSearchResultsException();
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -63,5 +67,4 @@ public class FunctionBO{
 		}
 		return null;
 	}
-	
 }
