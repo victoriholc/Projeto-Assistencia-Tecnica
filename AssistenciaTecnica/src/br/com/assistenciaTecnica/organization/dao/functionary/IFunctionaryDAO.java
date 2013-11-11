@@ -17,6 +17,6 @@ public interface IFunctionaryDAO extends IPersonDAO
 	public List<Functionary> searchByDateAdimission(Date dateAdimission);
 	public List<Functionary> searchByDateResignation(Date dateResignation);
 	public Functionary searchByUser(String userNames);
-	public List<Functionary> searchByScholarity(Scholarity scholarity);
+	public List<Functionary> searchByScholarity(String description);
 	
 }

@@ -28,14 +28,14 @@ public class RegisterDAO extends GenericDAO<Register> implements IRegisterDAO
                 return null;
         }
         @Override
-        public List<Register> batchQuery(String lot)
+        public Integer batchQuery(String lot)
         {
                 try
                 {
                         TypedQuery<Register> query = entityManager.createQuery("SELECT FROM Register r WHERE r.lot = :lot", Register.class);
                         query.setParameter("lot", lot);
 
-                        return query.getResultList().count();
+                        return query.getResultList().size();
                 }
                 catch(Exception e)
                 {
@@ -48,7 +48,7 @@ public class RegisterDAO extends GenericDAO<Register> implements IRegisterDAO
                 try{
                         TypedQuery<Register> query = entityManager.createQuery("SELECT  FROM EletronicPiece e WHERE e.name = :e.name", Register.class);
                         query.setParameter("piece", piece);
-                        return query.getResultList().count();
+                        return query.getResultList().size();
                 }catch(Exception e){
                         e.printStackTrace();
                 }

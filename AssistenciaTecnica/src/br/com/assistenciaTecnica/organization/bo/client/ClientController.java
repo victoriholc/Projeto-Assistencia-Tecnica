@@ -1,22 +1,11 @@
 package br.com.assistenciaTecnica.organization.bo.client;
 
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
-import br.com.assistenciaTecnica.base.client.*;
-import br.com.assistenciaTecnica.base.user.User;
-import br.com.assistenciaTecnica.dao.specific.*;
-import br.com.assistenciaTecnica.dao.generic.*;
-import br.com.assistenciaTecnica.organization.bo.exceptions.person.InvalidPersonFieldException;
-import br.com.assistenciaTecnica.organization.bo.exceptions.person.address.InvalidPersonAdressException;
-import br.com.assistenciaTecnica.organization.bo.exceptions.user.InvalidUserFieldException;
+import br.com.assistenciaTecnica.base.client.Client;
 import br.com.assistenciaTecnica.organization.dao.client.ClientDAO;
 import br.com.assistenciaTecnica.organization.dao.client.IClientDAO;
-import br.com.assistenciaTecnica.organization.model.functionary.Department;
-import br.com.assistenciaTecnica.organization.model.functionary.Functionary;
-import br.com.assistenciaTecnica.organization.model.functionary.Function;
-import br.com.assistenciaTecnica.organization.model.functionary.Scholarity;
 
 public class ClientController{
 	private IClientDAO daoClient;
@@ -25,30 +14,8 @@ public class ClientController{
 		this.daoClient = new ClientDAO();
 	}
 	
-	public void insert(Client client) throws NullPointerException,
-												InvalidPersonFieldException,
-												InvalidPersonAdressException,
-												InvalidUserFieldException
+	public void insert(Client client)
 	{
-		if (client == null)
-			throw new NullPointerException("Cliente nulo");
-		if (client.getName() == null || client.getName().isEmpty() || client.getName().length() > 50)
-			throw new InvalidPersonFieldException("Nome inv�lido!");
-		if (client.getEmail() == null || client.getEmail().isEmpty() || client.getEmail().length() > 25)
-			throw new InvalidPersonFieldException("Email inv�lido!");
-		for (int i = 0; i < client.getTelephones().size(); ++i)
-		{
-			if (client.getTelephones().get(i).getCountryCode() == null || 
-					client.getTelephones().get(i).getCountryCode() == 0)
-				throw new InvalidPersonAdressException("Códido de país inválido!");
-			if (client.getTelephones().get(i).getCityCode() == null || 
-					client.getTelephones().get(i).getCityCode() == 0)
-				throw new InvalidPersonAdressException("Códido de cidade inválido!");
-			if (client.getTelephones().get(i).getTelephoneNumber() == null || 
-					client.getTelephones().get(i).getTelephoneNumber().isEmpty() ||
-					client.getTelephones().get(i).getTelephoneNumber().length() > 16)
-				throw new InvalidPersonAdressException("Códido de cidade inválido!");
-		}
 		try{
 			this.daoClient.insert(client);
 		}catch(Exception e){

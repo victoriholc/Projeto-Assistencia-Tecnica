@@ -59,11 +59,11 @@ public class Functionary extends Person
 	protected Scholarity scholarity; //escolaridade
 
 	public Function getRole() {
-		return role;
+		return function;
 	}
 
-	public void setRole(Function role) {
-		this.role = role;
+	public void setRole(Function function) {
+		this.function = function;
 	}
 
 	public Department getDepartment() {

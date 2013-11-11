@@ -118,12 +118,12 @@ public class FunctionaryDAO extends PersonDAO implements IFunctionaryDAO
 	}
 
 	@Override
-	public List<Functionary> searchByScholarity(Scholarity scholarity) {
+	public List<Functionary> searchByScholarity(String description) {
 		try
 		{
-			String jpql = "SELECT f FROM Functionary f WHERE f.scholarity = :scholarity";
+			String jpql = "SELECT f FROM Functionary f WHERE f.scholarity.description LIKE description";
 			TypedQuery<Functionary> query = entityManager.createQuery(jpql, Functionary.class);
-			query.setParameter("scholarity", scholarity);
+			query.setParameter("description", description);
 			
 			return query.getResultList();
 		}

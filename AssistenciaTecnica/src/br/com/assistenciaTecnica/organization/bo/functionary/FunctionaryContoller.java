@@ -3,16 +3,11 @@ package br.com.assistenciaTecnica.organization.bo.functionary;
 import java.util.Date;
 import java.util.List;
 
-import br.com.assistenciaTecnica.base.user.User;
 import br.com.assistenciaTecnica.organization.bo.exceptions.person.InvalidPersonFieldException;
 import br.com.assistenciaTecnica.organization.bo.exceptions.person.address.InvalidPersonAdressException;
-import br.com.assistenciaTecnica.organization.bo.functionary.exceptions.InvalidFunctionaryFieldException;
 import br.com.assistenciaTecnica.organization.dao.functionary.FunctionaryDAO;
 import br.com.assistenciaTecnica.organization.dao.functionary.IFunctionaryDAO;
-import br.com.assistenciaTecnica.organization.model.functionary.Department;
 import br.com.assistenciaTecnica.organization.model.functionary.Functionary;
-import br.com.assistenciaTecnica.organization.model.functionary.Function;
-import br.com.assistenciaTecnica.organization.model.functionary.Scholarity;
 
 public class FunctionaryContoller {
 	private IFunctionaryDAO daoFunctionary;
@@ -121,9 +116,9 @@ public class FunctionaryContoller {
 		return null;
 	}
 	
-	public List<Functionary> searchByScholarity(String scholarity){
+	public List<Functionary> searchByScholarity(String description){
 		try{
-			this.daoFunctionary.searchByScholarity(scholarity);
+			this.daoFunctionary.searchByScholarity(description);
 		}catch(Exception e){
 			e.printStackTrace();
 		}

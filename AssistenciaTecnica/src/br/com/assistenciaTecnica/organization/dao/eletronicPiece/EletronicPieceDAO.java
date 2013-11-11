@@ -4,8 +4,8 @@ import java.util.List;
 
 import javax.persistence.TypedQuery;
 
-import dao.GenericDAO;
 import br.com.assistenciaTecnica.base.stock.EletronicPiece;
+import br.com.assistenciaTecnica.organization.dao.GenericDAO;
 
 public class EletronicPieceDAO extends GenericDAO<EletronicPiece> implements IEletronicPieceDAO
 {

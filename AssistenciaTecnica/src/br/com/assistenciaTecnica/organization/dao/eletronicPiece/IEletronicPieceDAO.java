@@ -2,9 +2,8 @@ package br.com.assistenciaTecnica.organization.dao.eletronicPiece;
 
 import java.util.List;
 
-import dao.IGenericDAO;
-
 import br.com.assistenciaTecnica.base.stock.EletronicPiece;
+import br.com.assistenciaTecnica.organization.dao.IGenericDAO;
 
 
 public interface IEletronicPieceDAO extends IGenericDAO<EletronicPiece>
