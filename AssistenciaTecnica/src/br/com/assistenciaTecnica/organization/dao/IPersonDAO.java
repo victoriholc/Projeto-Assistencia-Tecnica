@@ -18,5 +18,4 @@ public interface IPersonDAO extends IGenericDAO<Person>
 	public List<Person> searchByStreetType(Integer streetTypeID);
 	public List<Person> searchByRegion(Integer regionID);
 	public List<Person> searchByCountry(Integer countryID);
-	public List<Person> seeAll();
 }

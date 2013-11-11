@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+		<h:head>
+			<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+			<title>Insert title here</title>
+		</h:head>
+	<h:body>
+		<h:form>
+			<p:panel menuTitle="Cadastrar Função" header="Artistas ">
+			<p:dataTable var="function" value="#{functionBean.listFunction}">
+				<p:column headerText="Nome">
+					<h:outputText value="#{function.name}" />
+				</p:column>
+
+				<p:column headerText="Salario">
+					<h:outputText value="#{function.salary}" />
+				</p:column>
+				<p:column headerText="Ações">
+					<h:commandLink action="#{functionBean.refrech(function)}" value="Editar"></h:commandLink>
+					&nbsp;
+					<h:commandLink action="#{functionBean.remove(function)}" value="Excluir"></h:commandLink>
+				</p:column>
+			</p:dataTable>
+			<!-- <f:facet name="footer">
+				<p:commandLink action="index.xhtml" immediate="true" ajax="false">Home</p:commandLink>
+			</f:facet> -->
+		</p:panel>
+		</h:form>
+	</h:body>
+</html>

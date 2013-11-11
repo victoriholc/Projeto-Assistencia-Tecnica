@@ -2,10 +2,11 @@ package beans.organization.function;
 
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
 
 import br.com.assistenciaTecnica.Facade;
-import br.com.assistenciaTecnica.organization.exception.function.FunctionAlreadyExistentsException;
 import br.com.assistenciaTecnica.organization.model.functionary.Function;
 
 @ManagedBean
@@ -78,14 +79,21 @@ public class FunctionBean {
 	}
 	
 	public void removeFunction(Function function){
-		if(function.getId() == null){
+		try{
 			Facade.getInstace().removeFunction(function);
-		}else{
-			System.out.println("Function Exist");
+			
+		}catch(Exception e){
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN,
+							"Fuction não pode ser removido"+function.getName(),e.getMessage()));
+			System.out.println("A Função não pode ser removida");	
 		}
 	}
 	
-	public void refrech(Function function){
-		
+	public List<Function> listFunction(){
+		return Facade.getInstace().seeAllFunction();
+	}
+	
+	public void refrech(Function functionParam){
+		this.function = functionParam;
 	}
 }

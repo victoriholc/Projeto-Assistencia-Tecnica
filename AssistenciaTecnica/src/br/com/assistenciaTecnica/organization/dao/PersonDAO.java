@@ -201,20 +201,4 @@ public class PersonDAO extends GenericDAO<Person> implements IPersonDAO
 		
 		return null;
 	}
-
-	@Override
-	public List<Person> seeAll() 
-	{
-		try
-		{
-			TypedQuery<Person> query = entityManager.createNamedQuery("Person.seeAll", Person.class);
-			return query.getResultList();
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-		return null;
-	}
-
 }

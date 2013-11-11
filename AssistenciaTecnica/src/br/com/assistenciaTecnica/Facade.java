@@ -62,4 +62,8 @@ public class Facade {
 	public List<Function> functionListBySalary(Function function) throws FunctionAlreadyExistentsException{
 		return functionBO.FunctionListBysalaty(function);
 	}
+	
+	public List<Function> seeAllFunction(){
+		return functionBO.seeAllFunction();
+	}
 }
