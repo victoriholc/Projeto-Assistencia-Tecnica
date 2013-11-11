@@ -8,8 +8,6 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
-
-
 public abstract class GenericDAO<Entity> implements IGenericDAO<Entity>
 {
 	protected EntityManager entityManager;

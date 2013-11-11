@@ -67,4 +67,12 @@ public class FunctionBO{
 		}
 		return null;
 	}
+	public List<Function> seeAllFunction(){
+		try{
+			this.functionDAO.seeAll();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return null;
+	}
 }
