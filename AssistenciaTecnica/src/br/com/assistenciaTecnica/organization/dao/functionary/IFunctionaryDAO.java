@@ -11,12 +11,12 @@ import br.com.assistenciaTecnica.organization.model.functionary.Scholarity;
 
 public interface IFunctionaryDAO extends IPersonDAO
 {
-	public List<Functionary> searchByFunction(Function function);
-	public List<Functionary> searchByDepartment(Department department);
+	public List<Functionary> searchByFunction(String functionName);
+	public List<Functionary> searchByDepartment(String departmentName);
 	public Functionary searchByRegistrationCode(String registrationCode);
 	public List<Functionary> searchByDateAdimission(Date dateAdimission);
 	public List<Functionary> searchByDateResignation(Date dateResignation);
-	public Functionary searchByUser(User user);
+	public Functionary searchByUser(String userNames);
 	public List<Functionary> searchByScholarity(Scholarity scholarity);
 	
 }

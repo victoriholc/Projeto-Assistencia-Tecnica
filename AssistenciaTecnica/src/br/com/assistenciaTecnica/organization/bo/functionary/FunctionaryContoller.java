@@ -70,18 +70,18 @@ public class FunctionaryContoller {
 		return null;
 	}
 	
-	public List<Functionary> searchByRole(Function role){
+	public List<Functionary> searchByFunction(String roleName){
 		try{
-			this.daoFunctionary.searchByRole(role);
+			this.daoFunctionary.searchByFunction(roleName);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
 		return null;
 	}
 	
-	public  List<Functionary> searchByDepartment(Department department){
+	public  List<Functionary> searchByDepartment(String departmentName){
 		try{
-			this.daoFunctionary.searchByDepartment(department);
+			this.daoFunctionary.searchByDepartment(departmentName);
 			}catch(Exception e){
 				e.printStackTrace();
 			}
@@ -112,16 +112,16 @@ public class FunctionaryContoller {
 		}
 		return null;
 	}
-	public Functionary searchByUser(User user){
+	public Functionary searchByUser(String userName){
 		try{
-			this.daoFunctionary.searchByUser(user);
+			this.daoFunctionary.searchByUser(userName);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
 		return null;
 	}
 	
-	public List<Functionary> searchByScholarity(Scholarity scholarity){
+	public List<Functionary> searchByScholarity(String scholarity){
 		try{
 			this.daoFunctionary.searchByScholarity(scholarity);
 		}catch(Exception e){
@@ -155,9 +155,5 @@ public class FunctionaryContoller {
 				functionary.getTelephones().get(i).getTelephoneNumber().length() > 16)
 				throw new InvalidPersonAdressException();
 		}
-	}
-	private final void validateFunctionaryFields(Functionary functionary) throws InvalidFunctionaryFieldException
-	{
-		
 	}
 }

@@ -26,10 +26,10 @@ import br.com.assistenciaTecnica.base.user.User;
 public class Functionary extends Person 
 {
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "fk_id_role", insertable = true,
+	@JoinColumn(name = "fk_id_function", insertable = true,
 			updatable = true)
 	@Fetch(FetchMode.JOIN)
-	protected Function role; //Funcao
+	protected Function function; //Funcao
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "fk_id_department", insertable = true,

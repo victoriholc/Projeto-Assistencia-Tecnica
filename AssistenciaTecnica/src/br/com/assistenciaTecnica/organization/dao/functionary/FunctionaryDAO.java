@@ -14,12 +14,12 @@ import br.com.assistenciaTecnica.organization.model.functionary.Scholarity;
 public class FunctionaryDAO extends PersonDAO implements IFunctionaryDAO 
 {
 	@Override
-	public List<Functionary> searchByFunction(Function function){
+	public List<Functionary> searchByFunction(String functionName){
 		try
 		{
-			String jpql = "SELECT f FROM Functionary f WHERE f.function = :function";
+			String jpql = "SELECT f FROM Functionary f WHERE f.function.name LIKE :functionName";
 			TypedQuery<Functionary> query = entityManager.createQuery(jpql, Functionary.class);
-			query.setParameter("function", function);
+			query.setParameter("function", functionName);
 			
 			return query.getResultList();
 		}
@@ -32,12 +32,12 @@ public class FunctionaryDAO extends PersonDAO implements IFunctionaryDAO
 	}
 
 	@Override
-	public List<Functionary> searchByDepartment(Department department) {
+	public List<Functionary> searchByDepartment(String departmentName) {
 		try
 		{
-			String jpql = "SELECT f FROM Functionary f WHERE f.department = :department";
+			String jpql = "SELECT f FROM Functionary f WHERE f.department.name LIKE :departmentName";
 			TypedQuery<Functionary> query = entityManager.createQuery(jpql, Functionary.class);
-			query.setParameter("department", department);
+			query.setParameter("department", departmentName);
 			
 			return query.getResultList();
 		}
@@ -101,12 +101,12 @@ public class FunctionaryDAO extends PersonDAO implements IFunctionaryDAO
 	}
 
 	@Override
-	public Functionary searchByUser(User user) {
+	public Functionary searchByUser(String userName) {
 		try
 		{
-			String jpql = "SELECT f FROM Functionary f WHERE f.user = :user";
+			String jpql = "SELECT f FROM Functionary f WHERE f.user.name = :userName";
 			TypedQuery<Functionary> query = entityManager.createQuery(jpql, Functionary.class);
-			query.setParameter("user", user);
+			query.setParameter("user", userName);
 			
 			return (Functionary) query.getResultList();//n�o conseguir achar o erro ent�o coloquei um cast
 		}
@@ -132,12 +132,6 @@ public class FunctionaryDAO extends PersonDAO implements IFunctionaryDAO
 			e.printStackTrace();
 		}
 		
-		return null;
-	}
-
-	@Override
-	public List<Functionary> searchByFunction(Function function) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
