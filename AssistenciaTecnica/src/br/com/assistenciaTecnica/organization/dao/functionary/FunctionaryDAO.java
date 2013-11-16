@@ -2,13 +2,11 @@ package br.com.assistenciaTecnica.organization.dao.functionary;
 
 import java.util.Date;
 import java.util.List;
+
 import javax.persistence.TypedQuery;
-import br.com.assistenciaTecnica.base.user.User;
+
 import br.com.assistenciaTecnica.organization.dao.PersonDAO;
-import br.com.assistenciaTecnica.organization.model.functionary.Department;
-import br.com.assistenciaTecnica.organization.model.functionary.Function;
 import br.com.assistenciaTecnica.organization.model.functionary.Functionary;
-import br.com.assistenciaTecnica.organization.model.functionary.Scholarity;
 
 
 public class FunctionaryDAO extends PersonDAO implements IFunctionaryDAO 

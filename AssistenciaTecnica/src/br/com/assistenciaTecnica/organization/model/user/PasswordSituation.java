@@ -1,4 +1,4 @@
-package br.com.assistenciaTecnica.base.user;
+package br.com.assistenciaTecnica.organization.model.user;
 
 public enum PasswordSituation 
 {

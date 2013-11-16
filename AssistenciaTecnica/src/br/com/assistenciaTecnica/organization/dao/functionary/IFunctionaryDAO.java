@@ -2,12 +2,9 @@ package br.com.assistenciaTecnica.organization.dao.functionary;
 
 import java.util.Date;
 import java.util.List;
-import br.com.assistenciaTecnica.base.user.User;
+
 import br.com.assistenciaTecnica.organization.dao.IPersonDAO;
-import br.com.assistenciaTecnica.organization.model.functionary.Department;
-import br.com.assistenciaTecnica.organization.model.functionary.Function;
 import br.com.assistenciaTecnica.organization.model.functionary.Functionary;
-import br.com.assistenciaTecnica.organization.model.functionary.Scholarity;
 
 public interface IFunctionaryDAO extends IPersonDAO
 {

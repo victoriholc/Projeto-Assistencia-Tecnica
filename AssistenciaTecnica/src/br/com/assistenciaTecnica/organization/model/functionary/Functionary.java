@@ -18,7 +18,8 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 import br.com.assistenciaTecnica.base.person.Person;
-import br.com.assistenciaTecnica.base.user.User;
+import br.com.assistenciaTecnica.organization.model.department.Department;
+import br.com.assistenciaTecnica.organization.model.user.User;
 
 @ManagedBean
 @Entity @Table(name = "tb_functionary")
