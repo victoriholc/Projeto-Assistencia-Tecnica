@@ -11,6 +11,7 @@
 	</h:head>
 	<h:body>
 		<h:form>
+			<p:growl></p:growl>
 			<p:dialog header="Sistema de Assistência Técnica" widgetVar="dlg"
 				showEffect="slide" width="450" modal="true" visible="true"
 				resizable="false" closable="false" draggable="true">
@@ -27,7 +28,7 @@
 					<p:column>
 						<h:outputText value="Senha:"></h:outputText>:</p:column>
 					<p:column>
-						<p:password id="senha" value="#{loginBean.senha}" tabindex="2"
+						<p:password id="senha" value="#{loginBean.passWord}" tabindex="2"
 							requiredMessage="Preencha a senha" required="true"
 							autocomplete="false"></p:password>
 					</p:column>
@@ -35,10 +36,10 @@
 						<p:commandButton value="Limpar" tabindex="3" ajax="false"
 							type="reset"></p:commandButton>
 						<p:commandButton value="Logar" tabindex="3" ajax="false"
-							action="#{loginBean.efetuarLogin2}"></p:commandButton>
+							action="#{loginBean.effectLogin}"></p:commandButton>
 						<br></br>
 						<br></br>
-						<p:commandLink value="Novo Usuário" immediate="true" action="/novo-usuario.xhtml"></p:commandLink>
+						<!--<p:commandLink value="Novo Usuário" immediate="true" action="/novo-usuario.xhtml"></p:commandLink>-->
 					</f:facet>
 				</h:panelGrid>
 			</p:dialog>

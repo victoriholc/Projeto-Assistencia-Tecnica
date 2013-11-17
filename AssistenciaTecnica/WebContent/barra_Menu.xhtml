@@ -26,11 +26,11 @@
 				</p:submenu>
 				
 				<f:facet name="options">
-				<p:outputLabel rendered="#{not empty loginBean.usuarioLogado}"
+				<p:outputLabel rendered="#{not empty loginBean.userLog}"
 					value="Usuário logado: #{loginBean.usuarioLogado.login}"></p:outputLabel>
 					&nbsp;
 					<p:commandButton action="#{loginBean.efetuarLogoff}"
-					immediate="true" rendered="#{not empty loginBean.usuarioLogado}"
+					immediate="true" rendered="#{not empty loginBean.userLog}"
 					value="Logout" icon="ui-icon-extlink" />
 			</f:facet>
 			</p:megaMenu>
